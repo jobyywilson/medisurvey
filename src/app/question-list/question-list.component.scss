@@ -1,0 +1,32 @@
+.mat-table{
+    width: 100%;
+}
+.button-cell {
+    padding-top: 6%;
+    padding-right: 100%;
+    margin-left: 0%;
+    padding-left: 0%;
+}
+.add-question{
+    margin-top: 0.2%;
+    padding-right: 0.5%;
+    position: absolute;
+    align-items: center;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.mat-column-actions {
+    width:13%;
+}
+.btn-add:focus,.btn-delete:focus {
+   
+    box-shadow: none;
+}
+.btn-add{
+    margin-right: 10px;
+}
+.card-header{
+    font-weight: bold;
+}

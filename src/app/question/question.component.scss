@@ -1,0 +1,63 @@
+.field {
+    width: 100%;
+    margin : 2%;
+}
+.align-right{
+    float: right;
+}
+.fieldbtn{
+    margin: 14 px;
+}
+  .ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+}
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #42A948;
+}
+select.form-control:focus,input.form-control:focus {
+   
+    box-shadow: none;
+}
+.field-group{
+    padding: 1%;
+    align-items: center;
+}
+.btn-main{
+    margin-top: 0.2%;
+    margin-right: 1%;
+}
+.footer-btn{
+    margin-top: 10%;
+}
+.btn-field-add{
+    margin-left: 81%;
+}
+.field-list{
+    padding-left: 8%;
+}
+.back-question{
+    margin-top: 0.2%;
+    padding-right: 0.5%;
+    position: absolute;
+    align-items: center;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.ng2-smart-titles {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+.sub-question-header{
+    text-align: center;
+}
+.sub-question-list{
+margin:5%    
+
+}
+.subquestion-action-col{
+    text-align: center;
+}
+.card-header{
+    font-weight: bold;
+}

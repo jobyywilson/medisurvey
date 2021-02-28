@@ -1,0 +1,27 @@
+.logo-btn{
+    border-radius: 50%;
+    background-color: #2e1c82;
+    font-size: 142%;
+    margin: 1%;
+}
+.card-header{
+    background-color: #0d6efd;
+}
+.app-name{
+    margin: 1%;
+    color: white;
+}
+.login-form{
+    padding-top: 2%;
+}
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+}
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #42A948;
+}
+.login-btn{
+    display: flex;
+    justify-content: flex-end;
+    padding: 3%;
+}
