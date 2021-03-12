@@ -1,0 +1,35 @@
+<form [formGroup]="cloneForm" (ngSubmit)="onConfirmClick()">
+<mat-dialog-content>
+    
+    <div class="row">
+        <div class="col">
+            <label>Clone layout from </label>
+        </div>
+        <div class="col">
+            <input class="form-control" type="text" formControlName="oldLayoutName" required>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>New clone layout name:</label>
+        </div>
+        <div class="col">
+            <input class="form-control" type="text" formControlName="newLayoutName" class="form-control" required>
+            <div  *ngIf="newLayoutName&&newLayoutName.errors&& (newLayoutName.dirty || newLayoutName.touched)"
+                                class="alert alert-danger">
+
+                                <div >
+                                    New clone name is required.
+                                </div>
+                            </div>
+        </div>
+
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+	<button mat-raised-button color="primary"  [disabled]="newLayoutName==null||(newLayoutName&&newLayoutName.value.length==0)" (click)="onConfirmClick();$event.stopPropagation()" tabindex="1">{{confirmButtonText}}</button>
+	<button mat-raised-button mat-dialog-close (click)="$event.stopPropagation()" tabindex="-1">{{cancelButtonText}}</button>
+</mat-dialog-actions>
+</form>

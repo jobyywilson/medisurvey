@@ -1,0 +1,24 @@
+
+    <nav class="bar-height" id="sidebar">
+
+
+        <div class="list-group">
+            <a class="list-group-item">
+                <span>  </span>
+            </a>
+            <div *ngFor="let layout of questionLayoutList">
+                
+                <a routerLink="/questions/{{layout.setName}}" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                    <button [disabled]="layout.active" (click)="changeActiveLayout(layout.setName)" type="button" class="btn btn-default btn-circle"  [ngClass]="{
+                        'btn-active' : layout.active
+                     }"><i class="fa fa-check"></i>
+                    </button>
+                    <label>{{layout.setName}}</label>
+                    <button type="button" (click)="clone(layout)" class="btn btn-default btn-circle"><i class="fa fa-clone"></i>
+                    </button>
+                </a>
+
+            </div>
+        </div>
+
+    </nav>

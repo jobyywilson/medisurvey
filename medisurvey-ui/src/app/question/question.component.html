@@ -1,0 +1,91 @@
+<div class="card mt-4">
+    <h4 class="card-header">Question details</h4>
+    <div class="back-question">
+        <button (click)="back()" class="btn btn-primary btn-sm btn-main" type="button" data-toggle="tooltip"
+            data-placement="top" title="Back"><i class="fa fa-arrow-left"></i> Back</button>
+        <button *ngIf="modifyAllowed" (click)="submit()" class="btn btn-primary btn-sm btn-main" type="button"
+            data-toggle="tooltip" data-placement="top" title="Save"><i class="fa fa-save"></i> Save</button>
+        <button (click)="previewQuestions()" class="btn btn-primary btn-sm btn-main" type="button" data-toggle="tooltip"
+            data-placement="top" title="Preview"><i class="fa fa-eye"></i> Preview</button>
+    </div>
+
+    <div class="card-body">
+
+        <form (ngSubmit)="submit()" *ngIf="questionForm" [formGroup]="questionForm">
+            <div class="row field-group">
+                <div class="col-1">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col-11">
+                    <input formControlName="questionNameControl" type="text" class="form-control" id="name" required
+                        name="name">
+                    <div *ngIf="name&&name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+                        <div *ngIf="name.errors&&name.errors.required">
+                            Name is required.
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row field-group">
+                <div class="col-1">
+                    <label for="name">Type</label>
+                </div>
+                <div class="col-4">
+                    <select (change)="changeQuestionType($event)" formControlName="questionTypeControl"
+                        class="form-control">
+                        <option [ngValue]="fieldName" *ngFor="let fieldName of fieldType">{{fieldName}}</option>
+                    </select>
+                    <div *ngIf="questionType&&questionType.invalid && (questionType.dirty || questionType.touched)"
+                        class="alert alert-danger">
+
+                        <div *ngIf="questionType.errors&&questionType.errors.required">
+                            Question Type is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="sub-question-list" *ngIf="model.questionType=='Check Box'||model.questionType=='Radio Button'">
+             <div class="row">
+
+                <div class="col-9 sub-question-header">
+                    <label>Sub questions</label>
+                </div>
+                <div class="col-3">
+                    <button *ngIf="modifyAllowed" (click)="addvalue()" class="btn btn-primary btn-sm btn-dlt "
+                        type="button" data-toggle="tooltip" data-placement="top" title="Add sub question"><i
+                            class="fa fa-plus"></i> Add Sub question</button>
+                </div>
+            </div>
+            <div class="field-list">
+                <div *ngFor="let value of values; let i = index">
+                    <div class="row field-group">
+                        <div class="col-9">
+                            <input class="form-control" type="text" [disabled]="!modifyAllowed" [(ngModel)]="value.name"
+                                name="value{{i}}" required>
+                            <div *ngIf="value&&value.name&&value.name.length==0 "
+                                class="alert alert-danger">
+
+                                <div >
+                                    Question Type is required.{{value.name.length}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 subquestion-action-col">
+                            <button *ngIf="modifyAllowed" (click)="removevalue(i)" class="btn btn-danger btn-sm btn-dlt"
+                                type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

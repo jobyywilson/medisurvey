@@ -1,0 +1,25 @@
+<div class="toolbar" >
+  <button href="#" class="btn btn-primary btn-sm logo-btn" type="button" data-toggle="tooltip" data-placement="top"
+    title="Logo"><i class="fa fa-dna"></i></button>
+  <div class="row">
+    <div class="col-1">
+      <h2>MediSurvey</h2>
+    </div>
+
+    <div class="col-9 logout-div">
+      <button class="btn btn-primary btn-sm " (click)="logout()" type="button" data-toggle="tooltip"
+        data-placement="top" title="Logout"><i class="fa fa-power-off"></i>
+        Logout</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="sidemenu">
+    <app-sidemenu  ></app-sidemenu>
+  </div>
+  <div class="col container">
+    <router-outlet></router-outlet>
+  </div>
+
+  
+</div>
